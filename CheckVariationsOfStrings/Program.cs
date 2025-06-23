@@ -28,7 +28,7 @@ public static class Program
 
                 long finalLimit = DefaultLimit;
 
-                if (!string.IsNullOrWhiteSpace(limit))
+                if (!string.IsNullOrEmpty(limit))
                 {
                     if (!long.TryParse(limit, out long parsedLimit))
                         throw new Exception($"limit has to be lower than {long.MaxValue}");
@@ -56,7 +56,7 @@ public static class Program
             Console.WriteLine("Do you want to keep going? (yes/no)");
 
             keepGoing = Console.ReadLine()!;
-            if (string.IsNullOrWhiteSpace(keepGoing))
+            if (string.IsNullOrEmpty(keepGoing))
             {
                 break;
             }
